@@ -9,4 +9,4 @@ app.listen(config.port, () => {
 })
 app.use(express.json())
 
-app.use('/tibber-developer-test/enter-path', enterPath)
+app.post('/tibber-developer-test/enter-path', enterPath)
