@@ -2,7 +2,7 @@
   "name": "tibber-assignment",
   "version": "1.0.0",
   "scripts": {
-    "test": "tsc --noEmit && eslint .",
+    "test": "tsc --noEmit && eslint . && vitest run",
     "start": "ts-node index.ts",
     "dev": "ts-node-dev --respawn --transpile-only index.ts"
   },
