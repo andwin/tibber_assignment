@@ -1,0 +1,9 @@
+{
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+}
