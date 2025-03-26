@@ -8,6 +8,8 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@sequelize/core": "^7.0.0-alpha.46",
+    "@sequelize/postgres": "^7.0.0-alpha.46",
     "express": "^4.21.2",
     "ts-node": "^10.9.2"
   },
