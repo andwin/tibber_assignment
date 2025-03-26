@@ -1,6 +1,9 @@
 {
   "name": "tibber-assignment",
   "version": "1.0.0",
+  "engine": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "test": "tsc --noEmit && eslint . && vitest run",
     "start": "ts-node index.ts",
