@@ -1,0 +1,34 @@
+name: tibber-assignment
+
+services:
+  tibber_nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tibber_nodejs
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=postgres://tibber:password@postgres:5432/tibber
+    ports:
+      - "5001:5000"
+    networks:
+      - tibber_network
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: tibber_postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=tibber
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=tibber
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./data/pg:/var/lib/postgresql/data
+    networks:
+      - tibber_network
+
+networks:
+  tibber_network:
+    driver: bridge
