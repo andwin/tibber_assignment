@@ -13,6 +13,9 @@ const run = async () => {
   try {
     await sequelize.authenticate()
     console.log('Connected to database')
+
+    await sequelize.sync()
+    console.log('Database synchronized')
   } catch (e: unknown) {
     console.error('Database setup failed:', e)
     process.exit(1)
