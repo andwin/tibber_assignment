@@ -15,6 +15,7 @@
     "@sequelize/postgres": "^7.0.0-alpha.46",
     "@types/express": "^5.0.1",
     "express": "^4.21.2",
+    "pino": "^9.6.0",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
