@@ -2,6 +2,7 @@ import express from 'express'
 import config from './config'
 import enterPath from './routes/enter_path'
 import sequelize from './db'
+import logger from './lib/logger'
 
 const app = express()
 
@@ -12,17 +13,17 @@ app.post('/tibber-developer-test/enter-path', enterPath)
 const run = async () => {
   try {
     await sequelize.authenticate()
-    console.log('Connected to database')
+    logger.info('Connected to database')
 
     await sequelize.sync()
-    console.log('Database synchronized')
+    logger.info('Database synchronized')
   } catch (e: unknown) {
-    console.error('Database setup failed:', e)
+    logger.error('Database setup failed:', e)
     process.exit(1)
   }
 
   app.listen(config.port, () => {
-    console.log(`Running on port ${config.port} 🥳`)
+    logger.info(`Running on port ${config.port} 🥳`)
   })
 }
 

@@ -4,6 +4,7 @@ import type Position from '../types/position'
 import type Command from '../types/command'
 import processCommands from '../lib/process_commands'
 import { Execution } from '../db'
+import logger from '../lib/logger'
 
 type Body = {
   start: Position
@@ -28,11 +29,11 @@ const enterPath = async (request: Request, response: Response) => {
       duration: durationInSeconds,
     }
     const execution = await Execution.create(data)
-    console.log('Execution created:', data)
+    logger.info('Execution created:', execution)
 
     response.send(execution)
   } catch (e: unknown) {
-    console.error('Failed to create execution:', e)
+    logger.error('Failed to create execution:', e)
     response.status(500).send({ error: 'Failed to create execution' })
   }
 }
