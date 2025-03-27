@@ -30,7 +30,7 @@ const enterPath = async (request: Request, response: Response) => {
     const execution = await Execution.create(data)
     console.log('Execution created:', data)
 
-    response.send({ execution })
+    response.send(execution)
   } catch (e: unknown) {
     console.error('Failed to create execution:', e)
     response.status(500).send({ error: 'Failed to create execution' })
