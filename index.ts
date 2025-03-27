@@ -4,7 +4,7 @@ import enterPath from './routes/enter_path'
 import sequelize from './db'
 import logger from './lib/logger'
 
-const app = express()
+export const app = express()
 
 app.use(express.json())
 
