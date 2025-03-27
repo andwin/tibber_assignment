@@ -12,14 +12,20 @@ type Body = {
 
 const enterPath = async (request: Request, response: Response) => {
   const { start, commands } = request.body as Body
+
+  const startTime = performance.now()
+
   const result = processCommands(start, commands)
+
+  const endTime = performance.now()
+  const durationInSeconds = (endTime - startTime) / 1000
 
   try {
     const data: CreationAttributes<Execution> = {
       timestamp: new Date(),
       commands: commands.length,
       result,
-      duration: 0,
+      duration: durationInSeconds,
     }
     const execution = await Execution.create(data)
     console.log('Execution created:', data)
