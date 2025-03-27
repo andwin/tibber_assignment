@@ -7,7 +7,8 @@
   "scripts": {
     "test": "tsc --noEmit && eslint . && vitest run",
     "start": "ts-node index.ts",
-    "dev": "ts-node-dev --respawn --transpile-only index.ts"
+    "dev": "ts-node-dev --respawn --transpile-only index.ts",
+    "package": "zip -r tibber.zip . -x \".git/*\" \"data/*\" \"node_modules/*\""
   },
   "license": "ISC",
   "dependencies": {
