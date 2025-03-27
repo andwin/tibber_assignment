@@ -29,11 +29,11 @@ const enterPath = async (request: Request, response: Response) => {
       duration: durationInSeconds,
     }
     const execution = await Execution.create(data)
-    logger.info('Execution created:', execution)
+    logger.info(`Execution created: ${JSON.stringify(execution)}`)
 
     response.send(execution)
   } catch (e: unknown) {
-    logger.error('Failed to create execution:', e)
+    logger.error(`Failed to create execution: ${e}`)
     response.status(500).send({ error: 'Failed to create execution' })
   }
 }

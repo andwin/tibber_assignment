@@ -18,7 +18,7 @@ const run = async () => {
     await sequelize.sync()
     logger.info('Database synchronized')
   } catch (e: unknown) {
-    logger.error('Database setup failed:', e)
+    logger.error(`Database setup failed: ${e}`)
     process.exit(1)
   }
 
