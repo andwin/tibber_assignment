@@ -10,7 +10,7 @@ services:
     environment:
       - DATABASE_URL=postgres://tibber:password@postgres:5432/tibber
     ports:
-      - "5001:5000"
+      - "5000:5000"
     networks:
       - tibber_network
 
