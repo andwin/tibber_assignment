@@ -1,4 +1,7 @@
 {
-  "extends": "@andwin/eslint-config"
+  "extends": "@andwin/eslint-config",
+  "rules": {
+    "arrow-body-style": ["error", "always"]
+  }
 }
 
